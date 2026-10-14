@@ -89,6 +89,23 @@ p { margin: 0; }
 }
 .lang-toggle:hover { background: var(--slate); color: #fff; }
 
+/* --- Real drones used in class (first thing on the page) ----------------------- */
+
+.real { background: var(--slate); color: #fff; padding: 14px var(--gutter); }
+.real-inner {
+  max-width: calc(var(--page) + 2 * var(--gutter)); margin: 0 auto;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px;
+}
+.real-title { font-weight: 800; color: var(--orange); flex: none; }
+.real-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px 32px; flex: 1 1 520px; }
+.real-list li { display: flex; align-items: center; gap: 12px; flex: 1 1 240px; max-width: 30em; }
+.real-list strong { display: block; font-family: var(--display); font-weight: 400; font-size: 1.15rem; letter-spacing: .02em; line-height: 1.3; }
+.real-list li > div > span { display: block; font-size: 0.92rem; color: #c3cfd8; line-height: 1.5; }
+.real-list li > div > strong > span { display: inline; }
+.real-icon { width: 44px; height: 44px; flex: none; color: #e8ecef; }
+.real-note { font-size: 0.92rem; color: #c3cfd8; flex: none; }
+html[data-lang="zh"] .real-list strong span[lang="zh"] { font-family: var(--text); font-weight: 800; }
+
 /* --- Hero: the sky --------------------------------------------------------- */
 
 .hero {
