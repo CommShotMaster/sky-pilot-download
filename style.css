@@ -321,8 +321,12 @@ html[data-lang="zh"] .run { font-family: var(--text); font-weight: 900; }
 .all-versions { margin-top: 28px; }
 .all-versions a { font-weight: 600; text-underline-offset: 4px; }
 
-.foot { border-top: 1px solid #dbe6ee; padding: 28px var(--gutter) 40px; }
-.foot p { max-width: var(--page); margin: 0 auto; color: var(--slate-soft); font-size: 0.9rem; }
+.foot { border-top: 1px solid #dbe6ee; padding: 36px var(--gutter) 48px; }
+.foot-inner { max-width: var(--page); margin: 0 auto; display: flex; align-items: center; gap: 24px; }
+.foot-logo { width: 66px; height: auto; flex: none; }
+.foot-text p { color: var(--slate-soft); font-size: 0.95rem; }
+.foot-text .foot-credit { color: var(--slate); font-weight: 700; font-size: 1.05rem; }
+.foot-text .foot-small { font-size: 0.85rem; }
 
 /* --- Smaller screens ------------------------------------------------------------------ */
 
