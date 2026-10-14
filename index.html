@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>天空飞手 Sky Pilot</title>
+<meta name="description" content="给孩子的 3D 无人机模拟器：自由飞行、竞速、关卡，还有 65 个编程任务。支持安卓平板、手机和 Windows 电脑。A 3D drone simulator for kids with 65 coding missions.">
+<meta property="og:title" content="天空飞手 Sky Pilot">
+<meta property="og:description" content="学会飞无人机，也学会给它编程。Fly a drone, then program it.">
+<meta property="og:image" content="https://commshotmaster.github.io/sky-pilot-download/img/share.jpg">
+<meta name="theme-color" content="#d4ecf9">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bar">
+  <a class="brand" href="#top" aria-label="天空飞手 Sky Pilot">
+    <img src="img/icon.svg" alt="" width="40" height="40">
+    <span class="brand-name"><span lang="zh">天空飞手</span><span lang="en">Sky Pilot</span></span>
+  </a>
+  <nav class="nav" aria-label="页面导航">
+    <a href="#code"><span lang="zh">编程</span><span lang="en">Coding</span></a>
+    <a href="#fly"><span lang="zh">飞行</span><span lang="en">Flying</span></a>
+    <a href="#teachers"><span lang="zh">老师</span><span lang="en">Teachers</span></a>
+    <a href="#download" class="nav-download"><span lang="zh">下载</span><span lang="en">Download</span></a>
+  </nav>
+  <button class="lang-toggle" type="button" id="lang-toggle" aria-label="Switch language / 切换语言">
+    <span lang="zh">English</span><span lang="en">中文</span>
+  </button>
+</header>
+
+<main id="top">
+
+<!-- Hero: the sky -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>
+      <span lang="zh">学会飞无人机，<br>也学会给它编程。</span>
+      <span lang="en">Fly a drone.<br>Then program it.</span>
+    </h1>
+    <p class="lead">
+      <span lang="zh">天空飞手是给孩子的 3D 无人机模拟器。先用摇杆在城市和雪山上自由飞行，再拼积木或写 Python，看无人机按你的程序起飞、转弯、拍照、送包裹。</span>
+      <span lang="en">Sky Pilot is a 3D drone simulator for kids. Fly freely over a city and snowy mountains, then snap code blocks together or type Python and watch the drone take off, turn, take photos and deliver parcels exactly as programmed.</span>
+    </p>
+    <div class="get" id="hero-get">
+      <a class="btn btn-main" id="main-download" href="#download">
+        <span class="btn-title"><span lang="zh">免费下载</span><span lang="en">Download free</span></span>
+        <span class="btn-sub" id="main-download-sub"><span lang="zh">安卓和 Windows</span><span lang="en">Android and Windows</span></span>
+      </a>
+      <a class="btn-quiet" href="#download"><span lang="zh">其他设备和安装方法</span><span lang="en">Other devices and how to install</span></a>
+    </div>
+    <p class="facts">
+      <span lang="zh">65 个编程任务，25 个飞行关卡，2 张地图，可离线使用。</span>
+      <span lang="en">65 coding missions, 25 flight levels, 2 maps. Works offline.</span>
+    </p>
+  </div>
+  <figure class="hero-shot">
+    <img src="img/mountains-1600.jpg" srcset="img/mountains-800.jpg 800w, img/mountains-1600.jpg 1600w" sizes="(max-width: 900px) 100vw, 58vw" alt="无人机飞过雪山 / The drone flying over the Snow Mountains" width="1600" height="900">
+  </figure>
+</section>
+
+<!-- Code Lab: the training field -->
+<section class="field" id="code">
+  <div class="field-inner">
+    <div class="field-head">
+      <h2><span lang="zh">编程实验室</span><span lang="en">Code Lab</span></h2>
+      <p>
+        <span lang="zh">在 1 米一格的训练场上，用积木给无人机写程序：起飞、向前飞 4 米、右转 90 度……按下运行，正在执行的积木会亮起来。会了积木，再按 &lt;/&gt; 直接写 Python。</span>
+        <span lang="en">On a training field marked in 1 m squares, kids program the drone with blocks: take off, fly forward 4 m, turn right 90°… Press RUN and each block lights up as it runs. Ready for more? Press &lt;/&gt; and type the same program in Python.</span>
+      </p>
+    </div>
+
+    <div class="demo" id="demo">
+      <div class="demo-code">
+        <div class="demo-tabs" role="tablist" aria-label="Program view">
+          <button type="button" role="tab" aria-selected="true" data-view="blocks" id="tab-blocks"><span lang="zh">积木</span><span lang="en">Blocks</span></button>
+          <button type="button" role="tab" aria-selected="false" data-view="python" id="tab-python">Python</button>
+        </div>
+        <ol class="blocks" id="view-blocks" aria-label="Block program">
+          <li class="blk hat"><span lang="zh">当 ⚑ 被点击</span><span lang="en">when ⚑ clicked</span></li>
+          <li class="blk flight" data-step="0"><span lang="zh">起飞</span><span lang="en">take off</span></li>
+          <li class="blk control" data-step="loop">
+            <span class="blk-line"><span lang="zh">重复执行 <b>4</b> 次</span><span lang="en">repeat <b>4</b> times</span></span>
+            <ol class="blk-mouth">
+              <li class="blk flight" data-step="1"><span lang="zh">向前飞 <b>4</b> 米</span><span lang="en">fly forward <b>4</b> m</span></li>
+              <li class="blk flight" data-step="2"><span lang="zh">右转 <b>90</b> 度</span><span lang="en">turn right <b>90</b>°</span></li>
+            </ol>
+          </li>
+          <li class="blk action" data-step="3"><span lang="zh">拍照</span><span lang="en">take a photo</span></li>
+          <li class="blk flight" data-step="4"><span lang="zh">降落</span><span lang="en">land</span></li>
+        </ol>
+        <pre class="python" id="view-python" hidden><code><span class="ln c" data-step="-1"><span lang="zh"># 你的积木写成 Python 是这样的：</span><span lang="en"># Your blocks written in Python:</span></span>
+<span class="ln"><i>import</i> drone</span>
+<span class="ln" data-step="0">drone.takeoff()</span>
+<span class="ln" data-step="loop"><i>for</i> i <i>in</i> range(<em>4</em>):</span>
+<span class="ln" data-step="1">    drone.forward(<em>4</em>)</span>
+<span class="ln" data-step="2">    drone.turn_right(<em>90</em>)</span>
+<span class="ln" data-step="3">drone.take_photo()</span>
+<span class="ln" data-step="4">drone.land()</span></code></pre>
+        <button type="button" class="run" id="run"><span class="run-icon" aria-hidden="true"></span><span class="run-label"><span lang="zh">运行</span><span lang="en">RUN</span></span></button>
+      </div>
+      <div class="demo-field" aria-hidden="true">
+        <svg viewBox="0 0 10 10" id="arena">
+          <defs>
+            <pattern id="grid" width="1" height="1" patternUnits="userSpaceOnUse"><path d="M1 0H0V1" fill="none" stroke="rgba(255,255,255,.35)" stroke-width=".03"/></pattern>
+            <pattern id="grid5" width="5" height="5" patternUnits="userSpaceOnUse"><path d="M5 0H0V5" fill="none" stroke="rgba(255,255,255,.7)" stroke-width=".06"/></pattern>
+          </defs>
+          <rect width="10" height="10" fill="url(#grid)"/>
+          <rect width="10" height="10" fill="url(#grid5)"/>
+          <circle cx="3" cy="7.5" r=".7" fill="none" stroke="#ffcc33" stroke-width=".12"/>
+          <text x="3" y="7.72" font-size=".6" text-anchor="middle" fill="#ffcc33" font-family="Russo One, sans-serif">H</text>
+          <polyline id="trail" points="3,7.5" fill="none" stroke="#ffffff" stroke-width=".09" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=".25 .18"/>
+          <g id="drone" transform="translate(3 7.5)">
+            <ellipse id="drone-shadow" cx="0" cy="0" rx=".55" ry=".55" fill="rgba(0,0,0,.25)"/>
+            <g id="drone-body">
+              <g stroke="#16222d" stroke-width=".12" stroke-linecap="round"><line x1="-.42" y1="-.42" x2=".42" y2=".42"/><line x1=".42" y1="-.42" x2="-.42" y2=".42"/></g>
+              <g fill="none" stroke="#ff8a1f" stroke-width=".07"><circle cx="-.42" cy="-.42" r=".22"/><circle cx=".42" cy="-.42" r=".22"/><circle cx="-.42" cy=".42" r=".22"/><circle cx=".42" cy=".42" r=".22"/></g>
+              <rect x="-.17" y="-.24" width=".34" height=".48" rx=".1" fill="#e8ecef" stroke="#16222d" stroke-width=".04"/>
+              <path d="M0 -.62 L.12 -.46 H-.12 Z" fill="#ff8a1f"/>
+            </g>
+          </g>
+          <g id="flash" opacity="0"><circle cx="3" cy="7.5" r="1.4" fill="#fff"/></g>
+        </svg>
+        <p class="demo-caption" id="demo-caption"><span lang="zh">每格 1 米。按“运行”试试看。</span><span lang="en">Each square is 1 m. Press RUN to try it.</span></p>
+      </div>
+    </div>
+
+    <div class="path">
+      <h3><span lang="zh">一条 20 周的学习路线</span><span lang="en">A 20-week learning path</span></h3>
+      <p class="path-note"><span lang="zh">65 个任务一个接一个解锁，大约每周 3 个。用的积木越少，星星越多；第一次运行就成功，还能拿到“一次成功”奖章。</span><span lang="en">65 missions unlock one after another, about 3 a week. Fewer blocks earn more stars, and solving a mission on the first run earns a first-try medal.</span></p>
+      <ol class="steps-path">
+        <li><span lang="zh">顺序和数字</span><span lang="en">Sequence and numbers</span></li>
+        <li><span lang="zh">转向和角度</span><span lang="en">Turning and angles</span></li>
+        <li><span lang="zh">循环画图形</span><span lang="en">Loops and shapes</span></li>
+        <li><span lang="zh">速度和时间</span><span lang="en">Speed and time</span></li>
+        <li><span lang="zh">嵌套循环</span><span lang="en">Nested loops</span></li>
+        <li><span lang="zh">传感器</span><span lang="en">Sensors</span></li>
+        <li><span lang="zh">如果 / 否则走迷宫</span><span lang="en">If / else mazes</span></li>
+        <li><span lang="zh">变量和函数</span><span lang="en">Variables and functions</span></li>
+        <li><span lang="zh">规划和送货</span><span lang="en">Planning and deliveries</span></li>
+        <li><span lang="zh">期末挑战</span><span lang="en">Final Challenge</span></li>
+      </ol>
+      <p class="path-note"><span lang="zh">还有“任务制作器”：孩子自己摆放圆环、墙和停机坪，出题给同学解。</span><span lang="en">Plus the Mission Maker: kids place rings, walls and landing pads to build missions for their classmates.</span></p>
+    </div>
+
+    <figure class="field-shot">
+      <img src="img/python-1600.jpg" srcset="img/python-800.jpg 800w, img/python-1600.jpg 1600w" sizes="(max-width: 900px) 100vw, 900px" alt="编程实验室里的 Python 视图 / Code Lab with the Python view open" loading="lazy" width="1600" height="900">
+    </figure>
+  </div>
+</section>
+
+<!-- Flying -->
+<section class="fly" id="fly">
+  <div class="fly-head">
+    <h2><span lang="zh">像真的无人机一样飞</span><span lang="en">Flies like a real drone</span></h2>
+    <p><span lang="zh">四种飞行模式，从不会坠毁的街机模式，到需要真本事的 FPV 手动模式。还有竞速和幽灵回放、25 个关卡、每日挑战，以及白天、黄昏、夜晚和雨雪雾天气。</span><span lang="en">Four flight styles, from Arcade (it never crashes) to FPV Manual (it takes real skill). Plus races against your own ghost, 25 levels, a daily challenge, and day, sunset, night, rain, snow and fog.</span></p>
+  </div>
+
+  <table class="modes">
+    <caption class="sr-only"><span lang="zh">飞行模式</span><span lang="en">Flight styles</span></caption>
+    <thead>
+      <tr>
+        <th scope="col"><span lang="zh">模式</span><span lang="en">Style</span></th>
+        <th scope="col"><span lang="zh">感觉</span><span lang="en">How it feels</span></th>
+        <th scope="col"><span lang="zh">速度</span><span lang="en">Speed</span></th>
+        <th scope="col"><span lang="zh">难度</span><span lang="en">Difficulty</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><span lang="zh">街机</span><span lang="en">Arcade</span></th>
+        <td><span lang="zh">撞墙会弹开，永远不会坠毁，电池无限。最适合第一次玩。</span><span lang="en">Bounces off walls, never crashes, unlimited battery. Best for a first flight.</span></td>
+        <td><span class="m-label"><span lang="zh">速度</span><span lang="en">Speed</span></span><span class="meter" style="--v:4" aria-label="4/5"></span></td>
+        <td><span class="m-label"><span lang="zh">难度</span><span lang="en">Difficulty</span></span><span class="meter" style="--v:1" aria-label="1/5"></span></td>
+      </tr>
+      <tr>
+        <th scope="row"><span lang="zh">普通</span><span lang="en">Normal</span></th>
+        <td><span lang="zh">像大疆航拍机：GPS 悬停、自动避障刹车、有风、有电池。</span><span lang="en">Like a DJI camera drone: GPS hover, obstacle braking, wind and battery.</span></td>
+        <td><span class="m-label"><span lang="zh">速度</span><span lang="en">Speed</span></span><span class="meter" style="--v:2" aria-label="2/5"></span></td>
+        <td><span class="m-label"><span lang="zh">难度</span><span lang="en">Difficulty</span></span><span class="meter" style="--v:2" aria-label="2/5"></span></td>
+      </tr>
+      <tr>
+        <th scope="row"><span lang="zh">运动</span><span lang="en">Sport</span></th>
+        <td><span lang="zh">更快，惯性更大，没有避障刹车。</span><span lang="en">Much faster, more momentum, no obstacle braking.</span></td>
+        <td><span class="m-label"><span lang="zh">速度</span><span lang="en">Speed</span></span><span class="meter" style="--v:4" aria-label="4/5"></span></td>
+        <td><span class="m-label"><span lang="zh">难度</span><span lang="en">Difficulty</span></span><span class="meter" style="--v:3" aria-label="3/5"></span></td>
+      </tr>
+      <tr>
+        <th scope="row"><span lang="zh">FPV 手动</span><span lang="en">FPV Manual</span></th>
+        <td><span lang="zh">没有 GPS 悬停，速度最快。可以开自稳帮助新手。</span><span lang="en">No GPS hold and the highest speed. Self-levelling helps beginners.</span></td>
+        <td><span class="m-label"><span lang="zh">速度</span><span lang="en">Speed</span></span><span class="meter" style="--v:5" aria-label="5/5"></span></td>
+        <td><span class="m-label"><span lang="zh">难度</span><span lang="en">Difficulty</span></span><span class="meter" style="--v:5" aria-label="5/5"></span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="strip" tabindex="0" aria-label="Screenshots">
+    <figure><img src="img/race-800.jpg" srcset="img/race-800.jpg 800w, img/race-1600.jpg 1600w" sizes="(max-width: 700px) 85vw, 560px" alt="" loading="lazy" width="800" height="450"><figcaption><span lang="zh">竞速：10 道门，和自己的幽灵比赛</span><span lang="en">Race: 10 gates against your own ghost</span></figcaption></figure>
+    <figure><img src="img/city_sunset-800.jpg" srcset="img/city_sunset-800.jpg 800w, img/city_sunset-1600.jpg 1600w" sizes="(max-width: 700px) 85vw, 560px" alt="" loading="lazy" width="800" height="450"><figcaption><span lang="zh">黄昏的公园城市</span><span lang="en">Park City at sunset</span></figcaption></figure>
+    <figure><img src="img/night-800.jpg" srcset="img/night-800.jpg 800w, img/night-1600.jpg 1600w" sizes="(max-width: 700px) 85vw, 560px" alt="" loading="lazy" width="800" height="450"><figcaption><span lang="zh">雨夜飞行</span><span lang="en">Flying on a rainy night</span></figcaption></figure>
+    <figure><img src="img/codelab-800.jpg" srcset="img/codelab-800.jpg 800w, img/codelab-1600.jpg 1600w" sizes="(max-width: 700px) 85vw, 560px" alt="" loading="lazy" width="800" height="450"><figcaption><span lang="zh">编程实验室：程序运行中</span><span lang="en">Code Lab: a program running</span></figcaption></figure>
+    <figure><img src="img/menu-800.jpg" srcset="img/menu-800.jpg 800w, img/menu-1600.jpg 1600w" sizes="(max-width: 700px) 85vw, 560px" alt="" loading="lazy" width="800" height="450"><figcaption><span lang="zh">主菜单</span><span lang="en">Main menu</span></figcaption></figure>
+  </div>
+</section>
+
+<!-- Teachers -->
+<section class="teachers" id="teachers">
+  <h2><span lang="zh">为课堂设计</span><span lang="en">Made for the classroom</span></h2>
+  <dl class="features">
+    <div>
+      <dt><span lang="zh">每个班一个档案</span><span lang="en">A profile for each class</span></dt>
+      <dd><span lang="zh">每个学校或班级的星星、程序和记录分开保存，同一台平板可以给好几个班用。</span><span lang="en">Each school or class keeps its own stars, programs and records, so one tablet can serve several classes.</span></dd>
+    </div>
+    <div>
+      <dt><span lang="zh">班级进度表</span><span lang="en">Class progress table</span></dt>
+      <dd><span lang="zh">一眼看到每个班完成了哪些任务、卡在哪个任务。可以复制到 Excel、WPS 或者保存成 CSV。</span><span lang="en">See which missions each class has finished and where they are stuck. Copy it into Excel or WPS, or save it as a CSV file.</span></dd>
+    </div>
+    <div>
+      <dt><span lang="zh">教师密码</span><span lang="en">Teacher PIN</span></dt>
+      <dd><span lang="zh">设置密码后，学生不能切换、改名或删除班级档案。</span><span lang="en">With a PIN, students can't switch, rename or delete class profiles.</span></dd>
+    </div>
+    <div>
+      <dt><span lang="zh">不用网络</span><span lang="en">No internet needed</span></dt>
+      <dd><span lang="zh">安装后完全离线运行，不需要账号，没有广告。</span><span lang="en">Runs fully offline after installing. No accounts, no ads.</span></dd>
+    </div>
+    <div>
+      <dt><span lang="zh">中文和英文</span><span lang="en">Chinese and English</span></dt>
+      <dd><span lang="zh">默认简体中文，在设置里可以换成英文。</span><span lang="en">Simplified Chinese by default, English in Settings.</span></dd>
+    </div>
+    <div>
+      <dt><span lang="zh">进度不会丢</span><span lang="en">Progress stays safe</span></dt>
+      <dd><span lang="zh">自动备份存档，就算平板突然没电，班级进度也不会丢。</span><span lang="en">Saves are backed up automatically, so a tablet running out of battery won't wipe a class's progress.</span></dd>
+    </div>
+  </dl>
+</section>
+
+<!-- Download -->
+<section class="download" id="download">
+  <h2><span lang="zh">下载天空飞手</span><span lang="en">Download Sky Pilot</span></h2>
+  <p class="download-note"><span lang="zh">版本 1.1，免费。更新时直接安装新版本，进度会保留。</span><span lang="en">Version 1.1, free. To update, install the new version over the old one; progress is kept.</span></p>
+
+  <div class="platforms" id="platforms">
+    <article class="platform" data-platform="android">
+      <h3><span lang="zh">安卓平板和手机</span><span lang="en">Android tablets and phones</span></h3>
+      <a class="btn btn-main" href="https://github.com/CommShotMaster/sky-pilot-download/releases/latest/download/SkyPilot.apk">
+        <span class="btn-title"><span lang="zh">下载 APK</span><span lang="en">Download APK</span></span>
+        <span class="btn-sub">57 MB</span>
+      </a>
+      <p class="alt"><span lang="zh">2019 年以后的设备可以下载更小的</span><span lang="en">Devices from 2019 on can use the smaller</span> <a href="https://github.com/CommShotMaster/sky-pilot-download/releases/latest/download/SkyPilot_64bit.apk"><span lang="zh">64 位版本（32 MB）</span><span lang="en">64-bit version (32 MB)</span></a><span lang="zh">。如果装不上，请用上面的版本。</span><span lang="en">. If it won't install, use the one above.</span></p>
+      <ol class="install">
+        <li><span lang="zh">用平板或手机打开这个网页，下载 APK。</span><span lang="en">Open this page on the tablet or phone and download the APK.</span></li>
+        <li><span lang="zh">打开下载的文件。如果提示“未知来源”，点“设置”，允许这个浏览器安装应用。</span><span lang="en">Open the downloaded file. If it mentions unknown apps, tap Settings and allow this browser to install apps.</span></li>
+        <li><span lang="zh">点“安装”，然后打开天空飞手。</span><span lang="en">Tap Install, then open Sky Pilot.</span></li>
+      </ol>
+      <p class="req"><span lang="zh">需要 Android 7.0 或更新版本。</span><span lang="en">Needs Android 7.0 or newer.</span></p>
+    </article>
+
+    <article class="platform" data-platform="windows">
+      <h3><span lang="zh">Windows 电脑</span><span lang="en">Windows laptops and PCs</span></h3>
+      <a class="btn btn-main" href="https://github.com/CommShotMaster/sky-pilot-download/releases/latest/download/SkyPilot-Windows.zip">
+        <span class="btn-title"><span lang="zh">下载 Windows 版</span><span lang="en">Download for Windows</span></span>
+        <span class="btn-sub">82 MB (.zip)</span>
+      </a>
+      <ol class="install">
+        <li><span lang="zh">下载 zip 文件。</span><span lang="en">Download the zip file.</span></li>
+        <li><span lang="zh">右键点它，选“全部解压缩”。</span><span lang="en">Right-click it and choose Extract All.</span></li>
+        <li><span lang="zh">打开解压出来的 SkyPilot 文件夹，双击 SkyPilot.exe。两个文件要放在一起。</span><span lang="en">Open the extracted SkyPilot folder and double-click SkyPilot.exe. Keep both files together.</span></li>
+      </ol>
+      <p class="req"><span lang="zh">需要 64 位 Windows 10 或 11。键盘、手柄或触摸屏都可以玩。</span><span lang="en">Needs 64-bit Windows 10 or 11. Play with a keyboard, a gamepad or a touchscreen.</span></p>
+    </article>
+
+    <article class="platform platform-off" data-platform="ios">
+      <h3><span lang="zh">iPhone 和 iPad</span><span lang="en">iPhone and iPad</span></h3>
+      <p><span lang="zh">暂时还没有苹果版本。请用安卓平板或 Windows 电脑。</span><span lang="en">There's no Apple version yet. Please use an Android tablet or a Windows computer.</span></p>
+    </article>
+  </div>
+
+  <p class="all-versions"><a href="https://github.com/CommShotMaster/sky-pilot-download/releases"><span lang="zh">所有版本和更新说明</span><span lang="en">All versions and release notes</span></a></p>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p><span lang="zh">天空飞手 Sky Pilot，用 Godot 引擎制作。</span><span lang="en">Sky Pilot, made with the Godot Engine.</span></p>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
