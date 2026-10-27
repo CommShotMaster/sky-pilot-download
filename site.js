@@ -39,7 +39,7 @@
   var sub = document.getElementById("main-download-sub");
   if (platform === "android") {
     main.href = RELEASE + "SkyPilot.apk";
-    sub.innerHTML = '<span lang="zh">安卓 APK，62 MB</span><span lang="en">Android APK, 62 MB</span>';
+    sub.innerHTML = '<span lang="zh">安卓 APK，58 MB</span><span lang="en">Android APK, 58 MB</span>';
   } else if (platform === "windows") {
     main.href = RELEASE + "SkyPilot-Windows.zip";
     sub.innerHTML = '<span lang="zh">Windows 版，82 MB</span><span lang="en">For Windows, 82 MB</span>';
