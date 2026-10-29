@@ -369,3 +369,23 @@ html[data-lang="zh"] .run { font-family: var(--text); font-weight: 900; }
   .blk { min-width: 0; }
   .blk.control { min-width: 0; }
 }
+
+/* --- Latest version mark ---------------------------------------------------- */
+
+.latest {
+  display: inline-flex; align-items: center; gap: 10px; max-width: 100%;
+  margin-bottom: 18px; padding: 5px 14px 5px 5px;
+  border-radius: 999px; background: #fff; color: var(--slate);
+  font-size: 0.92rem; font-weight: 700; text-decoration: none;
+  box-shadow: 0 2px 0 rgba(22, 34, 45, 0.12);
+}
+.latest:hover { background: var(--paper); }
+.latest-text { min-width: 0; }
+.latest-tag {
+  flex: none; padding: 3px 10px; border-radius: 999px;
+  background: var(--field); color: #fff;
+  font-size: 0.8rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.download-version { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 12px; }
+.download-version strong { font-family: var(--display); font-weight: 400; font-size: 1.5rem; line-height: 1; }
+.version-date { color: var(--slate-soft); }
